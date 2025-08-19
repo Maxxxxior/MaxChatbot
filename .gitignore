@@ -8,6 +8,9 @@
 important.md
 apikey
 huggingface-space/
+ignore/
+__pycache__/
+/__pycache__
 
 # User-specific files
 *.rsuser

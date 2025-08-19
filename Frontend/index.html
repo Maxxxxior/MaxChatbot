@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>MaxChatbot</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>MaxChatbot - Chat about your files! <span id="sessionDisplay"></span></h1>
+
+        <div class="panel">
+            <p>Enter session name (new or existing):</p>
+            <input id="session" placeholder="e.g. test123"/>
+            <button id="startSessionBtn">Start session</button>
+            <div class="row">
+                <input type="file" id="file" accept=".txt, .docx, .pdf, .csv, .json" onclick="uploadFile()"/>
+                <button id="uploadBtn">Load file to database</button>
+            </div>
+        </div>
+
+        <div id="chat"></div>
+
+        <div class="row input">
+            <input id="message" placeholder="Write your message here..."/>
+            <button id="sendBtn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
