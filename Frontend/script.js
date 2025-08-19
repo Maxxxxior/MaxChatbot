@@ -36,10 +36,8 @@ startSessionBtn.onclick = async () => {
         });
         const data = await res.json();
 
-        // pokaż intro jeśli jest
         if (data.intro) addBubble(data.intro, "bot");
 
-        // pokaż historię
         if (data.history && data.history.length > 0) {
             data.history.forEach(msg => {
                 const who = msg.role === "user" ? "me" : "bot";
