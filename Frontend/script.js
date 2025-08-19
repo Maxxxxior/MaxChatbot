@@ -6,8 +6,7 @@ const sendBtn = document.getElementById("sendBtn");
 const uploadBtn = document.getElementById("uploadBtn");
 const startSessionBtn = document.getElementById("startSessionBtn");
 
-// Change in future for "https://maxxxxior-maxchatbotbackend.hf.space"
-const BACKEND = "http://127.0.0.1:8000";
+const BACKEND = "https://maxxxxior-maxchatbotbackend.hf.space";
 
 let currentSession = null;
 
