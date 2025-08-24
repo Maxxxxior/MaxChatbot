@@ -1,34 +1,97 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="frontend\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>MaxChatbot</title>
 </head>
 <body>
-    <div class="wrapper">
-        <h1>MaxChatbot - Chat about your files! <span id="sessionDisplay"></span></h1>
-
-        <div class="panel">
-            <p>Enter session name (new or existing):</p>
-            <input id="session" placeholder="e.g. test123"/>
-            <button id="startSessionBtn">Start session</button>
-            <div class="row">
-                <input type="file" id="file" accept=".txt, .docx, .pdf, .csv, .json" onclick="uploadFile()"/>
-                <button id="uploadBtn">Load file to database</button>
+    <div class="page">
+        <header class="topbar" aria-label="Górna belka nawigacyjna">
+            <div class="github">
+                <a href="https://github.com/Maxxxxior" class="github-avatar">
+                    <img style="height: auto;" alt src="https://maxxxxior.github.io/images/github_pfp.svg" width="32" height="32">
+                </a>
+                <a href="https://github.com/Maxxxxior" class="github-nickname">
+                    <span>Maxxxxior</span>
+                </a>
             </div>
-        </div>
 
-        <div id="chat"></div>
+            <button id="burgerBtn" class="burger" aria-label="Menu">&#9776;</button>
 
-        <div class="row input">
-            <input id="message" placeholder="Write your message here..."/>
-            <button id="sendBtn" onclick="sendMessage()">Send</button>
-        </div>
+            <div class="actionsWrapper">
+                <div class="actions">
+                    <button type="button" id="themeBtn" class="btn" aria-label="Przełącz motyw" data-i18n="changeTheme">Zmień motyw</button>
+                    <button type="button" id="langBtn" class="btn" aria-label="Przełącz język">EN</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="chatbot">
+                <h1 data-i18n="chatBot">MaxChatbot - Chat about your files! <span id="sessionDisplay"></span></h1>
+
+                <div class="panel">
+                    <div class="rowSession">
+                        <div class="sessionLabel">
+                            <p data-i18n="session"></p>
+                        </div>
+                        <div class="sessionRow">
+                            <div class="session">
+                                <input type="text" id="session" data-i18n="sessionInput" data-i18n-attr="placeholder"/>
+                                <button id="startSessionBtn" data-i18n="startSessionBtn"></button>
+                                <div class="showFiles">
+                                    <button id="showFilesBtn" data-i18n="showFilesBtn"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rowLoad">
+                        <div class="fileinput">
+                            <input type="file" id="file" accept=".txt, .docx, .pdf, .csv, .json" class="custom-file-input"/>
+                            <label for="file" id="custom-file-upload" class="custom-file-upload" data-i18n="chooseFile">
+                            </label>
+                            <span id="file-selected"></span>
+                        </div>
+                        <button id="uploadBtn" data-i18n="loadFile"></button>
+                    </div>
+                </div>
+
+                <div class="files"></div>
+
+                <div class="chat-wrapper" style="position: relative;">
+                    <div id="chat">
+                    </div>
+                    <button onclick="scrollDown()" id="scrollDown">
+                        <span class="material-symbols-outlined">arrow_downward</span>
+                    </button>
+                </div>
+
+                <div class="row input">
+                    <input type="text" id="message" data-i18n="messageBox" data-i18n-attr="placeholder" class="messageBox"/>
+                    <button id="sendBtn" onclick="sendMessage()" data-i18n="sendBtn">Send</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <nav class="socials">
+                <a href="https://github.com/Maxxxxior" target="_blank" rel="noopener noreferrer" class="fa fa-github" id="socials"></a>
+                <a href="https://www.linkedin.com/in/maksymilian-podlecki-003b69267" target="_blank" rel="noopener noreferrer" class="fa fa-linkedin" id="socials"></a>
+            </nav>
+            <div class="copyright">
+                <span>© <span id="year"></span> <span data-i18n="createdBy">Stworzone przez</span> <a href="https://github.com/Maxxxxior" target="_blank" rel="noopener noreferrer" class="max">Maxxxxior</a> • <a href="mailto:Maksymilian.Podlecki@gmail.com" class="mail">Maksymilian.Podlecki@gmail.com</a></span>
+            </div>
+        </footer>
     </div>
+    <script src="frontend\i18n.js"></script>
+    <script src="frontend\theme.js"></script>
     <script src="frontend\script.js"></script>
 </body>
 </html>
