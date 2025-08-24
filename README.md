@@ -8,8 +8,8 @@
 
 <div align="center">
 
-  [![Frontend Version](https://img.shields.io/badge/frontend-v1.1.0-red)](https://github.com/Maxxxxior/MaxChatbot/releases/tag/v1.1.0)
-  [![Backend Version](https://img.shields.io/badge/backend-v1.1.0-green)](https://huggingface.co/spaces/Maxxxxior/MaxChatbotBackend/releases/tag/v1.1.0)
+  [![Frontend Version](https://img.shields.io/badge/frontend-v1.1.1-red)](https://github.com/Maxxxxior/MaxChatbot/releases/tag/v1.1.1)
+  [![Backend Version](https://img.shields.io/badge/backend-v1.1.0-green)](https://huggingface.co/spaces/Maxxxxior/MaxChatbotBackend/tree/main)
   [![License](https://img.shields.io/badge/license-MIT-blue)](/LICENSE)
 
 </div>
