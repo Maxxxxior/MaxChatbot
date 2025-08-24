@@ -141,7 +141,11 @@ sendBtn.onclick = async () => {
             body: JSON.stringify({ message: msg, session_id: currentSession })
         });
         const data = await res.json();
-        addBubble(data.reply) || addSystemBubble("noResponse");
+        if (data.reply) {
+            addBubble(data.reply, "bot");
+        } else {
+            addSystemBubble("noResponse");
+        }
     } catch (e) {
         addSystemBubble("backendConnectionError");
     }
